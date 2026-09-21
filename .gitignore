@@ -1,0 +1,7 @@
+/dist
+/dist-test
+/node_modules
+*.vsix
+.env
+.DS_Store
+

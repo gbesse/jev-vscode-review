@@ -1,0 +1,36 @@
+{
+  "name": "jev-vscode-review",
+  "displayName": "Jev Selection Review",
+  "description": "Typed Jev review diagnostics anchored to exact selected lines.",
+  "version": "0.1.0",
+  "publisher": "gbesse",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/gbesse/jev-vscode-review.git" },
+  "engines": { "vscode": "^1.105.0", "node": ">=22" },
+  "categories": ["Linters", "Other"],
+  "activationEvents": ["onCommand:jevReview.reviewSelection", "onCommand:jevReview.setApiKey", "onCommand:jevReview.clearDiagnostics"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "jevReview.reviewSelection", "title": "Jev: Review Selection" },
+      { "command": "jevReview.setApiKey", "title": "Jev: Set TypeSafe API Key" },
+      { "command": "jevReview.clearDiagnostics", "title": "Jev: Clear Review Diagnostics" }
+    ],
+    "menus": {
+      "editor/context": [{ "command": "jevReview.reviewSelection", "when": "editorHasSelection", "group": "jevReview" }]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "tsc --noEmit && npm run build && node scripts/check.mjs",
+    "test": "node scripts/build-test.mjs && node --test",
+    "demo": "node scripts/demo.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.5.2",
+    "@types/vscode": "1.105.0",
+    "esbuild": "0.25.10",
+    "typescript": "5.9.3"
+  }
+}
+
