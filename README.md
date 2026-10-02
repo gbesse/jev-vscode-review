@@ -2,6 +2,10 @@
 
 Select code, run **Jev: Review Selection**, and receive diagnostics anchored to exact lines already in the selection. Jev answers declared finite questions and then selects line IDs; it never generates a review paragraph or edits code.
 
+## Try an exact-line diagnostic offline
+
+`npm run demo:diagnostic` sends no request: two synthetic answers select an issue and cite one line from a three-line selection. The output shows the precise editor line and range, then rejects an invented line ID. This previews the core contract; the VS Code Extension Development Host still needs an in-editor check.
+
 ## Develop
 
 ```bash
