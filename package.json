@@ -2,7 +2,7 @@
   "name": "jev-vscode-review",
   "displayName": "Jev Selection Review",
   "description": "Typed Jev review diagnostics anchored to exact selected lines.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "gbesse",
   "license": "MIT",
   "repository": { "type": "git", "url": "https://github.com/gbesse/jev-vscode-review.git" },
@@ -25,7 +25,8 @@
     "check": "tsc --noEmit && npm run build && node scripts/check.mjs",
     "test": "node scripts/build-test.mjs && node --test",
     "package:check": "vsce package --out /tmp/jev-vscode-review.vsix",
-    "demo": "node scripts/demo.mjs"
+    "demo": "node scripts/demo.mjs",
+    "demo:diagnostic": "node scripts/build-test.mjs && node scripts/diagnostic-demo.mjs"
   },
   "devDependencies": {
     "@types/node": "24.5.2",
