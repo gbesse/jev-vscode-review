@@ -24,13 +24,14 @@
     "build": "node scripts/build.mjs",
     "check": "tsc --noEmit && npm run build && node scripts/check.mjs",
     "test": "node scripts/build-test.mjs && node --test",
+    "package:check": "vsce package --out /tmp/jev-vscode-review.vsix",
     "demo": "node scripts/demo.mjs"
   },
   "devDependencies": {
     "@types/node": "24.5.2",
     "@types/vscode": "1.105.0",
+    "@vscode/vsce": "4.0.0",
     "esbuild": "0.25.10",
     "typescript": "5.9.3"
   }
 }
-
